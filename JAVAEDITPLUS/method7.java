@@ -1,0 +1,35 @@
+import java.util.Scanner;
+class method7
+{
+	public static void main(String[] args) 
+	{
+		method7 mt = new method7();
+		int n=mt.n();
+		int fibon=mt.fibon(n);
+		mt.prin(n,fibon);
+	}
+	int n()
+	{
+		Scanner sc = new Scanner (System.in);
+		System.out.printf("n:");
+		int n = sc.nextInt();
+		return n;
+	}
+	int fibon(int n) 
+	{
+		int finbon;
+		if (n <= 1) 
+		{
+			return n;
+        }else
+		{
+			finbon = fibon(n-1)+fibon(n-2);
+			return finbon;
+		}
+        
+	}
+	void prin(int n,int fibon)
+	{
+			System.out.printf("fibon(%d)=%d\n",n,fibon);
+	}
+}

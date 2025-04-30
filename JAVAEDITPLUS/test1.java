@@ -1,0 +1,33 @@
+import java.util.*;
+class test1 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		int M = sc.nextInt();
+		int N = sc.nextInt();
+		int sum = 1 ;
+		int sum1 = 1 ;
+
+		
+		if (M<N)
+		{
+			for (int i=M ; i<N ; i++ )
+			{
+				sum=sum*i;
+				sum1=sum*(i+1);
+				System.out.println(sum+"x"+(i+1)+"="+sum1);
+			}
+		}else
+		{
+			for (int i=M ; i>N ; i-- )
+			{
+				sum=sum*i;
+				sum1=sum*(i-1);
+				System.out.println(sum+"x"+(i-1)+"="+sum1);
+			}
+		}
+		
+			
+	}
+}

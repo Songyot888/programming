@@ -1,0 +1,33 @@
+import java.util.*;
+class test3 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		Random rn=new Random();
+		int n,m;
+		m=sc.nextInt();
+		n=sc.nextInt();
+		int matrix[][]=new int [m][n];
+		
+		
+		for (int i=0;i<m ;i++ )
+		{
+			for (int j=0;j<n ;j++ )
+			{
+				matrix[i][j]=rn.nextInt(1,10);
+				System.out.print(matrix[i][j]+"\t");
+			}System.out.println();
+		}
+		
+		int matrix_At[][]=new int [n][m];
+		for (int i=0;i<n ;i++ )
+		{
+			for (int j=0;j<m ;j++ )
+			{
+				System.out.print(matrix_At[j][i]+"\t");
+			}System.out.println();
+			
+		}
+	}
+}

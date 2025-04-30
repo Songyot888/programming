@@ -1,0 +1,112 @@
+import java.util.Scanner;
+
+class method4 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        method4 mt = new method4();
+        char[][] ch = new char[3][3];
+        mt.fill_array2D(ch);
+        for (int i = 0; ; i++) {
+            System.out.print("input X|O|E :");
+            char play = sc.next().charAt(0);
+            if (play == 'x' || play == 'X') {
+                int inI = mt.indexrow();
+                int inJ = mt.indexcolnum();
+                mt.Xarray2D(ch, inI, inJ);
+				mt.checkWin(ch);
+            } else if (play == 'o' || play == 'O') {
+                int inI = mt.indexrow();
+                int inJ = mt.indexcolnum();
+                mt.Oarray2D(ch, inI, inJ);
+				mt.checkWin(ch);
+            } else if (play == 'e' || play == 'E') {
+                break;
+            } else {
+                System.out.println("not input");
+            }
+			
+			
+        }
+    }
+
+    void prinarray2D(char[][] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                System.out.print(arr[i][j] + "\t");
+            }
+            System.out.println();
+        }
+    }
+
+    void fill_array2D(char[][] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                arr[i][j] = '_';
+            }
+        }
+    }
+
+    int indexrow() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Index row : ");
+        return sc.nextInt();
+    }
+
+    int indexcolnum() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Input colnum : ");
+        return sc.nextInt();
+    }
+
+    void Xarray2D(char[][] arr, int inI, int inJ) {
+        if (inI >= arr.length || inJ >= arr.length || inI<0 || inJ<0) {
+            System.out.println("not index");
+        } else if (arr[inI][inJ] != '_') {
+            System.out.println("input_new_index");
+        } else {
+            arr[inI][inJ] = 'X';
+        }
+        prinarray2D(arr);
+    }
+
+    void Oarray2D(char[][] arr, int inI, int inJ) {
+        if (inI >= arr.length || inJ >= arr.length || inI<0 || inJ<0) {
+            System.out.println("not index");
+        } else if (arr[inI][inJ] != '_') {
+            System.out.println("input_new_index");
+        } else {
+            arr[inI][inJ] = 'O';
+        }
+        prinarray2D(arr);
+    }
+	void checkWin(char[][] arr) {
+    for (int i = 0; i < arr.length; i++) {
+        if (arr[i][0] == 'X' && arr[i][1] == 'X' && arr[i][2] == 'X') {
+            System.out.println("X wins!");
+			System.exit(0);
+        } else if (arr[i][0] == 'O' && arr[i][1] == 'O' && arr[i][2] == 'O') {
+            System.out.println("O wins!");
+            System.exit(0);
+        }
+    }
+    for (int j = 0; j < arr.length; j++) {
+        if (arr[0][j] == 'X' && arr[1][j] == 'X' && arr[2][j] == 'X') {
+            System.out.println("X wins!");
+           System.exit(0);
+        } else if (arr[0][j] == 'O' && arr[1][j] == 'O' && arr[2][j] == 'O') {
+            System.out.println("O wins!");
+           System.exit(0);
+        }
+    }
+    if ((arr[0][0] == 'X' && arr[1][1] == 'X' && arr[2][2] == 'X') ||
+        (arr[0][2] == 'X' && arr[1][1] == 'X' && arr[2][0] == 'X')) {
+        System.out.println("X wins!");
+        System.exit(0);
+    } else if ((arr[0][0] == 'O' && arr[1][1] == 'O' && arr[2][2] == 'O') ||
+               (arr[0][2] == 'O' && arr[1][1] == 'O' && arr[2][0] == 'O')) {
+        System.out.println("O wins!");
+        System.exit(0);
+    }
+}
+
+}

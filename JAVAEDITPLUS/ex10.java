@@ -1,0 +1,30 @@
+import java.util.Scanner;
+class ex10 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.print("M:");
+		int m=sc.nextInt();
+		System.out.print("N:");
+		int n=sc.nextInt();
+		int matrixA[][]=new int[m][n];
+		for (int i=0;i<m ;i++ )
+		{
+			for (int j=0;j<n ;j++ )
+			{
+				matrixA[i][j]=(int)(Math.random()*9)+1;
+				System.out.print(matrixA[i][j]+"\t");
+			}System.out.println();
+		}
+		int matrixAt[][]=new int[n][m];
+		for (int i=0;i<n ;i++ )
+		{
+			for (int j=0;j<m ;j++ )
+			{
+				System.out.print(matrixA[j][i]+"\t");
+			}System.out.println();
+		}
+		
+	}
+}

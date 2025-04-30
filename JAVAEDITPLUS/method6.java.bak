@@ -1,0 +1,42 @@
+import java.util.Scanner;
+class method6
+{
+	public static void main(String[] args) 
+	{
+		method6 mt = new method6();
+		int x=mt.num();
+		int n=mt.lop();
+		int cal=mt.power(x,n);
+		mt.prin(x,n,cal);
+	}
+	int num()
+	{
+		Scanner sc = new Scanner (System.in);
+		System.out.printf("X:");
+		int x = sc.nextInt();
+		return x;
+	}
+	int lop()
+	{
+		Scanner sc = new Scanner (System.in);
+		System.out.printf("n:");
+		int n = sc.nextInt();
+		return n;
+	}
+	int power(int x,int n)
+	{
+		
+		if (n == 0) {
+            return 1;
+        } else if (n == 1) {
+            return x;
+        } else {
+            return x * power(x, n - 1);
+        }
+		 
+	}
+	void prin(int x,int n,int cal)
+	{
+		System.out.printf("%d^%d=%d",x,n,cal);
+	}
+}

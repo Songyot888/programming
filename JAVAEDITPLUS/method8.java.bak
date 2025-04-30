@@ -1,0 +1,28 @@
+import java.util.*;
+import java.util.InputMismatchException;
+class  method8
+{
+	public static void main(String[] args) 
+	{	
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter num1/+ - * / %/num2:");
+			
+		try
+		{
+			int num1=sc.nextInt();
+			char cal=sc.next().charAt(0);
+			int num2=sc.nextInt();
+			double sum=0;
+			if (cal=='+')
+		{
+			sum=num1+num2;
+		}
+		System.out.print(sum);
+		}
+		catch (InputMismatchException xxx)
+		{
+		}
+		
+		
+	}
+}

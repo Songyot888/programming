@@ -1,0 +1,54 @@
+import java.util.*;
+class  method1
+{
+	public static void main(String[] args) 
+	{
+		method1 mat = new method1();
+		
+		int loop=mat.input();
+		int loop1=mat.total(loop);
+		float loop2=mat.discount(loop1);
+		float loop3=mat.Netprice(loop1,loop2);
+		mat.print(loop1,loop2,loop3);
+	}
+	int input()
+	{
+		Scanner sc = new Scanner(System.in);
+		int num;
+		System.out.print("Input : ");
+		num=sc.nextInt();
+		return num;
+	}
+	int total(int lop)
+	{
+		int total=0;
+        int isrun=1;
+		for (;isrun==1; )
+		{
+			total+=lop;
+			lop=input();
+            if (lop<=0) {
+                break;
+            }
+		}
+
+		return total;
+	}
+	float discount(int lop)
+	{
+		float discout;
+			discout=(float)(lop*3)/100;
+		return discout;
+	}
+	float Netprice(int total,float discout)
+	{
+		float net_price;
+		net_price=total-discout;
+		return net_price;
+	}
+	void print(int total,float discout,float net_price)
+	{
+		System.out.print("Total\tDiscout\tNetprice\n");
+		System.out.printf("%d\t%.1f\t%.1f\n",total,discout,net_price);
+	}
+}

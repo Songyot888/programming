@@ -1,0 +1,40 @@
+import java.util.*;
+class  ex4
+{
+	public static void main(String[] args) 
+	{
+		Random rn = new Random();
+		int num=10;
+		int A[]=new int [num];
+		int B[] = new int [num];
+		
+		System.out.print("A\t[");
+		for (int i=0;i<num ;i++ )
+		{	
+				A[i]=rn.nextInt(0,2);
+				System.out.print(A[i]+"\t");
+		}System.out.print("]\n");
+		
+		System.out.print("B\t[");
+		for (int i=0;i<num ;i++ )
+		{	
+				B[i]=rn.nextInt(0,2);
+				System.out.print(B[i]+"\t");
+				
+		}System.out.print("]\n");
+		
+		System.out.print("AND\t");
+		for (int i=0;i<num ;i++ )
+		{
+			if (A[i]==1 && B[i]==1 )
+				{
+					System.out.print("True\t");
+				}
+			else
+				{
+					System.out.print("False\t");
+				}
+		}System.out.println();
+		
+	}
+}

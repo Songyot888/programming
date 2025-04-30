@@ -1,0 +1,40 @@
+import java.util.*;
+class test2 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		Random rn=new Random();
+		int N=sc.nextInt();
+		int Data[][]=new int [N][N];
+		int sum[]=new int[N];
+		double DataAvg[][]=new double [N][N];
+		
+		for (int i=0;i<Data.length ;i++ )
+		{
+			for (int j=0;j<Data[i].length ;j++ )
+			{
+				Data[i][j]=rn.nextInt(1,11);
+				System.out.print(Data[i][j]+"\t");
+				sum[i]+=Data[i][j];
+			}System.out.println();
+		}
+		
+		for (int i=0;i<Data.length ;i++ )
+		{
+			for (int j=0;j<Data[i].length ;j++ )
+			{
+				if (i==j)
+				{
+					DataAvg[i][j]=(double)sum[i]/N;
+					System.out.printf("%.1f\t",DataAvg[i][j]);
+				}
+				else
+				{
+					System.out.print(DataAvg[i][j]+"\t");
+				}
+			}System.out.println();
+			
+		}
+	}
+}

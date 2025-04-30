@@ -1,0 +1,71 @@
+import java.util.*;
+class method3_1 
+{
+	public static void main(String[] args) 
+	{
+		method3_1 mt = new method3_1();
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Input N : ");
+		int N = sc.nextInt();
+		int arrmid[]=new int[N];
+		int arrfin[]=new int[N];
+		String grade[]=new String[N];
+		mt.mid_fin(arrmid,arrfin);
+		mt.grade(arrmid,arrfin,grade);
+		mt.print(arrmid,arrfin,grade);
+		
+	}
+	void mid_fin(int arrmid[],int []arrfin){
+		Scanner sc = new Scanner(System.in);
+		for (int i=0;i < arrmid.length ;i++ )
+		{
+			System.out.print("Input Mid : ");
+			arrmid[i]=sc.nextInt();
+			System.out.print("Input Fin : ");
+			arrfin[i]=sc.nextInt();
+		
+		}
+	}
+	void grade(int []arrmid,int []arrfin,String []grade)
+	{
+		int sum=0;
+		for (int i=0;i < arrmid.length ;i++ )
+		{
+			sum=arrmid[i]+arrfin[i];
+			if (sum>=80)
+			{
+				grade[i]="A";
+			}else if (sum>=70)
+			{
+				grade[i]="B";
+			}else if (sum>=60)
+			{
+				grade[i]="C";
+			}else if (sum>=50)
+			{
+				grade[i]="D";
+			}else
+			{
+				grade[i]="F";
+			}
+		}
+	}
+	void print(int []arrmid,int []arrfin,String []grade)
+	{
+		System.out.print("MID:\t");
+		for (int i=0;i < arrmid.length ;i++ )
+		{
+			System.out.print(arrmid[i]+"\t");
+		}System.out.println();
+		System.out.print("FIN:\t");
+		for (int i=0;i < arrmid.length ;i++ )
+		{
+			System.out.print(arrfin[i]+"\t");
+		}System.out.println();
+		System.out.print("GRADE:");
+		for (int i=0;i < arrmid.length ;i++ )
+		{
+			System.out.print(grade[i]+"\t");
+		}System.out.println();
+	}
+}

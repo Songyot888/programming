@@ -1,0 +1,29 @@
+import java.util.*;
+class test 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		int M = sc.nextInt();
+		int N = sc.nextInt();
+		int sum = 1 ;
+		
+		if (M<N)
+		{
+			for (int i=M;i<=N ;i++ )
+			{
+				sum=sum*i;
+				System.out.print(i+"x");
+			}System.out.print("\b="+sum);
+		
+		}else
+		{
+			for (int i=M;i>=N ;i-- )
+			{
+				sum=sum*i;
+				System.out.print(i+"x");
+			}System.out.print("\b="+sum);
+		}
+		
+	}
+}

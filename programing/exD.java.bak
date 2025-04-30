@@ -1,0 +1,40 @@
+import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.Scanner;
+class exD
+{
+	public static void main(String[] args) 
+	{
+		HashMap <String,Integer>mp = new HashMap<String,Integer>();
+		ArrayList<Integer> numbers = new ArrayList<>();
+		Scanner sc = new Scanner(System.in);
+	}
+	void number(HashMap <String,Integer>mp)
+	{
+		//นำข้อมูลไปเก็บใน HashMap
+		mp.put("ZERO", 0);
+		mp.put("ONE", 1);
+        mp.put("TWO", 2);
+        mp.put("THREE", 3);
+        mp.put("FOUR", 4);
+        mp.put("FIVE", 5);
+        mp.put("SIX", 6);
+        mp.put("SEVEN", 7);
+        mp.put("EIGHT", 8);
+        mp.put("NINE", 9);
+		System.out.println(mp);
+	}
+	String input1(Scanner sc)
+	{
+		String num = sc.nextLine();
+		String[] tokens = num.split(" ");
+		return tokens;
+	}
+	void digit(ArrayList<Integer> numbers)
+	{
+		
+        for (String token : tokens) {
+            numbers.add(DIGIT_MAP.get(token.toUpperCase()));
+        }
+	}
+}

@@ -1,0 +1,88 @@
+import java.util.Stack;
+import java.util.Scanner;
+import java.util.InputMismatchException;
+import java.util.EmptyStackException;
+class week14_66011212090 
+{
+	
+	public static void main(String[] args) 
+	{
+		Stack<Integer>st=new Stack<Integer>();
+		week14_66011212090 mt = new week14_66011212090();
+		int menu,put;
+		for (; ; )
+		{
+			 menu=mt.putMenu();
+			if (menu==1)
+			{
+				put=mt.put();
+				mt.add(st,put);
+			}else if (menu==2)
+			{
+				mt.out(st);
+			}else if(menu==3)
+			{
+				break;	
+			}
+			mt.pn(st);
+		}
+	}
+	int  putMenu()
+	{
+		int NumberMenu=0;
+		try
+		{
+			Scanner sc= new Scanner(System.in);
+			System.out.println("1:Input/2:Output/3:Exit");
+			NumberMenu = sc.nextInt();
+		}
+		catch (InputMismatchException exx)
+		{
+			System.out.println("InputError!!!!");
+		}
+		return NumberMenu;
+	}
+	int  put()
+	{
+		int num=0;
+		try
+		{
+			Scanner sc= new Scanner(System.in);
+			System.out.println("Input Number :");
+		    num = sc.nextInt();
+			
+		}
+		catch (EmptyStackException exxx)
+		{
+			System.out.println("ERROR_DATA!!!!");
+		}
+		catch (InputMismatchException exe)
+		{
+			System.out.println("InputError");
+		}
+		return num;
+	}
+	
+	void add(Stack<Integer>st,int put)
+	{
+
+		st.add(put);
+	
+	}
+	void out(Stack<Integer>st)
+	{
+		try
+		{
+			st.pop();
+		}
+		catch (EmptyStackException exxx)
+		{
+			System.out.println("ERROR_DATA!!!!");
+		}
+		
+	}
+	void pn(Stack<Integer>st)
+	{
+		System.out.println(st);
+	}
+}

@@ -1,0 +1,34 @@
+import java.util.Scanner;
+class q2_B 
+{
+	public static void main(String[] args) 
+	{
+		q2_B mt = new q2_B();
+		String ms = mt.put();
+		mt.lop(ms);
+	}
+	String put()
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter your string: ");
+		String input = sc.nextLine();	
+		return input;
+	}
+	void lop(String str)
+	{
+		char []ch=str.toCharArray();
+		//char text[]=new char[str.length()];
+		for (int i=0;i<ch.length ;i++ )
+		{
+			//text[i]=ch[i];	
+			if (i%2==0)
+			{
+				ch[i]=Character.toUpperCase(ch[i]);
+			}
+		}
+		for (int i=0;i<ch.length ;i++ )
+		{
+			System.out.print(ch[i]);
+		}System.out.println();	
+	}
+}

@@ -1,0 +1,49 @@
+import java.util.Scanner;
+import java.util.HashMap;
+import java.util.Set;
+import java.util.Iterator;
+class  q2_C
+{
+	public static void main(String[] args) {
+        q2_C mt = new q2_C();
+		String input = mt.put();
+		mt.loop(input);
+        
+	}
+	String put(){
+		Scanner sc = new Scanner(System.in);
+        String input = sc.nextLine();
+		return input;
+	}
+	void loop(String input){
+		// แยกส่วนประกอบของ input ออกเป็นส่วนๆ
+		String[] parts = input.split("/");
+        // สร้าง HashMap ใหม่
+        HashMap<Integer, Integer> map = new HashMap<>();
+        // วนซ้ำแต่ละส่วนของ input
+        for (String part : parts) {
+            // แยกส่วนประกอบของแต่ละส่วนออกเป็น key และ value
+            String[] keyValue = part.split(",");
+            int key = Integer.parseInt(keyValue[0]);
+            int value = Integer.parseInt(keyValue[1]);
+            // ใส่ key และ value ลงใน HashMap
+            map.put(key, value);
+        }
+        // วนซ้ำ key ทั้งหมดใน HashMap
+        /*for (int key : map.keySet()) {
+            // พิมพ์ key และ value ออกมา
+            System.out.println(key + "   " + map.get(key));
+        }*/
+		/*Set <Integer>st=map.keySet();
+		System.out.println(st);
+		Iterator <Integer>itt=st.iterator();
+		Integer x;
+		Integer d;
+		for (int i=0;i<map.size() ;i++ )
+		{
+			x=itt.next();
+			d=map.get(x);
+			System.out.println(x+"\t"+d);
+		}*/
+	}
+}

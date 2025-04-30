@@ -1,0 +1,30 @@
+import java.util.*;
+class q2_F 
+{
+	public static void main(String[] args) 
+	{
+		q2_F mt = new q2_F();
+		String str=mt.put();
+		mt.up(str);
+	}
+	String put()
+	{
+		Scanner sc = new Scanner(System.in);
+		String str = sc.next();
+		return str;
+	}
+	void up(String str)
+	{
+		str=str.toUpperCase();
+		char ch1 = str.charAt(0);
+		char ch2 = str.charAt(str.length()-1);
+		if (ch1==ch2)
+		{
+			System.out.print("True");
+		}
+		else
+		{
+			System.out.print("False");
+		}
+	}
+}
